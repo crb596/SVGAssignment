@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Waving Flag</title>
+        <style>
+            body{
+                margin:0;   
+            }
+            .flag{
+                height:100%;
+                width:100%;
+            }
+            #one{
+                height:100%;
+                width:100%;
+            }
+            #two{
+                height:0%;
+                width:0%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="one">
+            <object class="flag" class="flag" data="flag1.svg" type="image/svg+xml"></object>
+        </div>
+        <div id="two">
+            <object class="flag" class="flag" data="flag2.svg" type="image/svg+xml"></object>
+        </div>
+        <script>
+            let flagOneContainer = document.getElementById("one");
+            let flagTwoContainer = document.getElementById("two");
+
+            function switchFlag() {
+                if(flagOneContainer.style.height=='0px'){
+                    flagOneContainer.style.height="100%";
+                    flagOneContainer.style.width="100%";
+                    flagTwoContainer.style.height=0;
+                    flagTwoContainer.style.width=0;
+                }
+                else{
+                    flagOneContainer.style.height=0;
+                    flagOneContainer.style.width=0;
+                    flagTwoContainer.style.height="100%";
+                    flagTwoContainer.style.width="100%";
+                }
+            }
+
+            setInterval(switchFlag, 500);
+        </script>
+    </body>
+</html>
